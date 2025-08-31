@@ -13,7 +13,7 @@ function App() {
 
   return (
     <BrowserRouter> 
-      <div className='relative min-h-screen'>
+      <div>
         <MatrixBackground />
       </div>
       <Routes>
