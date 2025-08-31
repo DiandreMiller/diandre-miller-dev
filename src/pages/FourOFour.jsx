@@ -54,6 +54,11 @@ const FourOFour = () => {
         </h1>
         <p className="mt-4 text-green-400 font-mono text-xl">You took the wrong pill...</p>
       </div>
+      <h2 className="absolute inset-0 flex items-center justify-center">
+        <span className="px-5 py-2 border-2 border-blue-500 lg:font-extrabold text-blue-700 text-[22px] font-semibold rounded-full animate-heartbeat2 willchange-beat translate-y-24">
+          return Home
+        </span>
+      </h2>
     </div>
   );
 };
