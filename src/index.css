@@ -100,3 +100,18 @@ button:focus-visible {
 .willchange-beat {
   will-change: transform, box-shadow;
 }
+
+@keyframes heartbeat2 {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 6px #44bfef, 0 0 12px #44c1ef, 0 0 20px #44c1ef;
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 12px #44c1ef, 0 0 24px #44c1ef, 0 0 40px #44c1ef;
+  }
+}
+
+.animate-heartbeat2 {
+  animation: heartbeat2 2s infinite ease-in-out;
+}
