@@ -1,5 +1,6 @@
 import DiandreLogo from '../assets/diandre-dev.png';
 import { useNavigate } from 'react-router-dom';
+import MatrixBackground from '../components/MatrixBackground';
 
 const Home = () => {
 
@@ -7,6 +8,7 @@ const Home = () => {
 
   return (
     <div className="flex items-center justify-center h-screen">
+        <MatrixBackground />
       <div className="relative group" onClick={() => navigate('/about')}>
         <img
           className="w-100 transition duration-300 group-hover:brightness-50"
