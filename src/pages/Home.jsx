@@ -1,5 +1,4 @@
-import React from 'react'
-import DiandreLogo from '../assets/diandre-dev.png'
+import DiandreLogo from '../assets/diandre-dev.png';
 
 const Home = () => {
   return (
@@ -18,4 +17,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Home;
