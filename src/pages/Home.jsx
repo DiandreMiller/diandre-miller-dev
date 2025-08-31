@@ -1,5 +1,7 @@
 import DiandreLogo from '../assets/diandre-dev.png';
 import { useNavigate } from 'react-router-dom';
+
+//Background
 import MatrixBackground from '../components/MatrixBackground';
 
 const Home = () => {
