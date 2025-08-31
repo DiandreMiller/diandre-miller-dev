@@ -1,9 +1,5 @@
-import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css'
-
-//Background
-import MatrixBackground from './components/MatrixBackground';
 
 //Page
 import Home from './pages/Home';
@@ -15,7 +11,6 @@ function App() {
   return (
     <BrowserRouter> 
       <div>
-        <MatrixBackground />
       </div>
       <Routes>
         <Route element={<Home />} path='/' />
