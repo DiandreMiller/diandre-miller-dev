@@ -17,9 +17,12 @@ const Home = () => {
           src={DiandreLogo}
           alt="Diandre Miller"
         />
-        <h1 className="absolute inset-0 flex items-center justify-center text-3xl font-bold text-green-500 opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-300 translate-y-40">
+
+      <h1 className="absolute inset-0 flex items-center justify-center">
+        <span className="px-5 py-2 border-2 border-red-500 lg:font-extrabold text-red-700 text-[22px] font-semibold rounded-full animate-heartbeat willchange-beat translate-y-42">
           Enter
-        </h1>
+        </span>
+      </h1>
       </div>
     </div>
   )
