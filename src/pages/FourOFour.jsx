@@ -11,14 +11,12 @@ const FourOFour = () => {
     let drops = [];
 
     function initCanvas() {
-      // match drawing buffer to viewport
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
 
       const cols = Math.floor(canvas.width / fontSize);
       drops = Array(cols).fill(1);
 
-      // solid first paint so nothing peeks through
       ctx.fillStyle = "rgb(0,0,0)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
     }
@@ -48,12 +46,8 @@ const FourOFour = () => {
   }, []);
 
   return (
-    // parent pinned to viewport (no lateral gap)
     <div className="fixed inset-0 overflow-hidden bg-black">
-      {/* canvas fills parent exactly */}
       <canvas id="matrix" className="absolute inset-0 w-full h-full block" />
-
-      {/* centered overlay */}
       <div className="absolute inset-0 z-10 flex flex-col items-center justify-center">
         <h1 className="text-9xl font-extrabold text-green-500 drop-shadow-[0_0_20px_#00ff00]">
           404
