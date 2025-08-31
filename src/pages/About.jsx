@@ -2,7 +2,7 @@ const About = () => {
 
   return (
     <div>
-      <h1>About Me</h1>
+      <h2 className="text-[50px]">About Me</h2>
       <p>
         My name is Diandre Miller, and I’m a software developer from Brooklyn. I began my career at a nonprofit called East Flatbush Village, Inc., where I served as both an Administrative Director and an Assistant Program Director. I truly loved the work I did there. Unfortunately, I was forced to step away due to a health issue.
         During that time away, I taught myself video editing. That was a big deal for me because, before that, I struggled with technology—I couldn’t even figure out how to connect my phone to Bluetooth. But learning video editing on my own gave me the confidence to believe I could do something even more technical, like software development.
