@@ -43,18 +43,13 @@ const FourOFour = () => {
 
   return (
     <div className="fixed inset-0 overflow-hidden bg-black">
-      {/* Canvas in the background */}
       <canvas id="matrix" className="absolute inset-0 w-full h-full block -z-10" />
-
-      {/* 404 message — ignore pointer events so clicks pass through */}
       <div className="absolute inset-0 z-10 pointer-events-none flex flex-col items-center justify-center">
         <h1 className="text-9xl font-extrabold text-green-500 drop-shadow-[0_0_20px_#00ff00]">
           404
         </h1>
         <p className="mt-4 text-green-400 font-mono text-xl">You took the wrong pill...</p>
       </div>
-
-      {/* Return pill — sits above, clickable */}
       <h2 className="absolute inset-0 z-20 flex items-center justify-center">
         <Link
           to="/"
