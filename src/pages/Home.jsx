@@ -1,9 +1,13 @@
 import DiandreLogo from '../assets/diandre-dev.png';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+
+    const navigate = useNavigate();
+
   return (
     <div className="flex items-center justify-center h-screen">
-      <div className="relative group">
+      <div className="relative group" onClick={() => navigate('/about')}>
         <img
           className="w-100 transition duration-300 group-hover:brightness-50"
           src={DiandreLogo}

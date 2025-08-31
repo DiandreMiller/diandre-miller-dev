@@ -6,7 +6,8 @@ import './App.css'
 import MatrixBackground from './components/matrixBackground';
 
 //Page
-import Home from './pages/Home'
+import Home from './pages/Home';
+import About from './pages/About';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
       </div>
       <Routes>
         <Route element={<Home />} path='/' />
+        <Route element={<About />} path='/about' />
       </Routes>
     </BrowserRouter>
   )
