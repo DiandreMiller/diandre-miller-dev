@@ -5,6 +5,7 @@ import './App.css';
 import Home from './pages/Home';
 import About from './pages/About';
 import FourOFour from './pages/FourOFour';
+import ContactMe from './pages/ContactMe';
 
 // Layout to include header and footer in everything but the home page
 import Layout from './components/Layout';
@@ -16,6 +17,7 @@ function App() {
         <Route element={<Home />} path='/' />
         <Route element={<Layout />}>
           <Route element={<About />} path='/about' />
+          <Route element={<ContactMe />} path='/contact-me' />
         </Route>
         <Route element={<FourOFour />} path='/*' />
       </Routes>
