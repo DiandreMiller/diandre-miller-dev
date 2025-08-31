@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css'
 
 //Background
-import MatrixBackground from './components/matrixBackground';
+import MatrixBackground from './components/MatrixBackground';
 
 //Page
 import Home from './pages/Home';
