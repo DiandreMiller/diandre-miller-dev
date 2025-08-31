@@ -7,7 +7,7 @@ import About from './pages/About';
 import FourOFour from './pages/FourOFour';
 import ContactMe from './pages/ContactMe';
 
-// Layout to include header and footer in everything but the home page
+// Layout to include header and footer in everything but the home page and 404 page
 import Layout from './components/Layout';
 
 function App() {
