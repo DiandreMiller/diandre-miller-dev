@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
-    <h1 className='text-green-500'>This is the Footer</h1>
+    <h2 className='text-green-500'>This is the Footer</h2>
   )
-}
+};
 
-export default Footer
+export default Footer;
