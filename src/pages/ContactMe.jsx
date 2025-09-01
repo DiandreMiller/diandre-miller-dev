@@ -1,31 +1,37 @@
+import { useState } from "react";
 import { Mail, Phone, Github, Linkedin } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import DOMPurify from "dompurify";
 
-//Add protections against scripting attacks
+const sanitizeText = (val) =>
+  DOMPurify.sanitize(val, { ALLOWED_TAGS: [], ALLOWED_ATTR: [] }).trim();
 
 const ContactMe = () => {
   const navigate = useNavigate();
 
-  // helper to encode FormData for Netlify
-  const encode = (formData) => new URLSearchParams(formData).toString();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-    const form = e.target;
-    const formData = new FormData(form);
+  // encode sanitized values for Netlify
+  const encode = () => {
+    const params = new URLSearchParams();
+    params.append("form-name", "contact");
+    params.append("name", sanitizeText(name));
+    params.append("email", sanitizeText(email));
+    params.append("message", sanitizeText(message));
+    return params.toString();
+  };
 
-    // Netlify needs form-name in the POST body
-    formData.set("form-name", "contact");
-
-    // Console log what's being sent
-    console.log("Message being sent:", Object.fromEntries(formData.entries()));
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
     try {
       await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode(formData),
+        body: encode(),
       });
       navigate("/email-sent");
     } catch (err) {
@@ -33,6 +39,10 @@ const ContactMe = () => {
       alert("Oops, something went wrong. Please try again.");
     }
   };
+
+  const onNameChange = (event) => setName(sanitizeText(event.target.value));
+  const onEmailChange = (event) => setEmail(sanitizeText(event.target.value));
+  const onMessageChange = (event) => setMessage(sanitizeText(event.target.value));
 
   return (
     <main className="min-h-screen bg-neutral-950 text-gray-200 flex items-center justify-center px-6 pt-28 pb-16">
@@ -92,7 +102,7 @@ const ContactMe = () => {
           onSubmit={handleSubmit}
           className="bg-neutral-900 border border-neutral-800 rounded-2xl p-8 shadow-lg space-y-6"
         >
-          {/* Netlify registration fields */}
+  
           <input type="hidden" name="form-name" value="contact" />
           <p className="hidden">
             <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
@@ -102,17 +112,29 @@ const ContactMe = () => {
             <div>
               <label className="block text-sm text-gray-400 mb-2">Name</label>
               <input
-                type="text" name="name" required
+                type="text"
+                name="name"
+                value={name}
+                onChange={onNameChange}
+                required
+                maxLength={120}
                 className="w-full rounded-lg bg-neutral-800 border border-neutral-700 px-4 py-3 text-gray-100 outline-none focus:border-green-500"
                 placeholder="Your name"
+                autoComplete="name"
               />
             </div>
             <div>
               <label className="block text-sm text-gray-400 mb-2">Email</label>
               <input
-                type="email" name="email" required
+                type="email"
+                name="email"
+                value={email}
+                onChange={onEmailChange}
+                required
+                maxLength={254}
                 className="w-full rounded-lg bg-neutral-800 border border-neutral-700 px-4 py-3 text-gray-100 outline-none focus:border-blue-500"
                 placeholder="you@example.com"
+                autoComplete="email"
               />
             </div>
           </div>
@@ -120,7 +142,12 @@ const ContactMe = () => {
           <div>
             <label className="block text-sm text-gray-400 mb-2">Message</label>
             <textarea
-              name="message" rows="5" required
+              name="message"
+              rows="5"
+              value={message}
+              onChange={onMessageChange}
+              required
+              maxLength={5000}
               className="w-full rounded-lg bg-neutral-800 border border-neutral-700 px-4 py-3 text-gray-100 outline-none focus:border-cyan-500"
               placeholder="Tell me about your project, timeline, goals…"
             />
