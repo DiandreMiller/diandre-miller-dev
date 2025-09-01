@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <div className="flex items-center justify-center h-screen">
         <MatrixBackground />
-      <div className="relative group" onClick={() => navigate('/about')}>
+      <div className="relative group" onClick={() => navigate('/about-me')}>
         <img
           className="w-100 transition duration-300 group-hover:brightness-50"
           src={DiandreLogo}

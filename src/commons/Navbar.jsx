@@ -14,10 +14,10 @@ const Navbar = () => {
         </li>
         <li>
           <Link
-            to="/about"
+            to="/about-me"
             className="hover:text-blue-400 hover:drop-shadow-[0_0_8px_#3b82f6] transition duration-300"
           >
-            About
+            About Me
           </Link>
         </li>
         <li>
