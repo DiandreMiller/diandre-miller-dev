@@ -19,7 +19,7 @@ function App() {
         <Route element={<Layout />}>
           <Route element={<About />} path='/about-me' />
           <Route element={<ContactMe />} path='/contact-me' />
-          <Route element={<Success />} path="/success"  />
+          <Route element={<Success />} path="/email-sent"  />
         </Route>
         <Route element={<FourOFour />} path='/*' />
       </Routes>

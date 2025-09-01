@@ -25,7 +25,7 @@ const ContactMe = () => {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode(formData),
       });
-      navigate("/success");
+      navigate("/email-sent");
     } catch (err) {
       console.error("Form submission error:", err);
       alert("Oops, something went wrong. Please try again.");
