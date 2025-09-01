@@ -21,7 +21,7 @@ const Footer = () => {
             <span>GitHub</span>
           </a>
           <a
-            href="linkedin.com/in/diandre-miller/"
+            href="https://linkedin.com/in/diandre-miller/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-white transition-colors flex items-center space-x-1"
@@ -35,6 +35,16 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="hover:text-white transition-colors flex items-center space-x-1"
           >
+            {/* TikTok SVG icon */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 48 48"
+              width="18"
+              height="18"
+              fill="currentColor"
+            >
+              <path d="M33.9 14.3c-2.3-1.5-4-3.8-4.5-6.7V7h-5.2v23.8c0 3.3-2.7 6-6 6s-6-2.7-6-6 2.7-6 6-6c.6 0 1.1.1 1.6.2V19c-.5-.1-1.1-.1-1.6-.1-6.1 0-11 4.9-11 11s4.9 11 11 11 11-4.9 11-11V20.7c1.2 1 2.6 1.8 4.2 2.3 1 .3 2 .5 3.1.6v-5.6c-.6-.1-1.2-.3-1.8-.7z" />
+            </svg>
             <span>TikTok</span>
           </a>
         </div>
