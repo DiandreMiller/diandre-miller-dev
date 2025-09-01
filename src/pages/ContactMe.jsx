@@ -17,8 +17,9 @@ const ContactMe = () => {
             <Mail size={36} />
             <span className="mt-2 text-sm">Email</span>
           </a>
+          {/* Phone */}
           <a
-            href="tel+19737804709"
+            href="tel:+19737804709"
             className="hover:text-green-400 hover:drop-shadow-[0_0_8px_#22c55e] transition flex flex-col items-center"
           >
             <Phone size={36} />
