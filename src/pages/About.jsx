@@ -54,7 +54,7 @@ const About = () => {
             </div>
 
             <div className="mt-8 flex flex-wrap gap-2">
-              {["React", "TypeScript", "Tailwind CSS", "Node.js", "Vite"].map((t) => (
+              {["React", "Vite", "Node.js", "PostgreSQL", "Express", "Javascript", "TypeScript", "Python", "Tailwind CSS", "Vanilla CSS"].map((t) => (
                 <span
                   key={t}
                   className="rounded-full border border-neutral-700 bg-neutral-800 px-3 py-1 text-xs text-gray-300"
