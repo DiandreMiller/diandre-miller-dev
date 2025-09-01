@@ -14,7 +14,7 @@ const About = () => {
               <div className="flex md:block justify-center">
                 <div className="relative h-40 w-40 overflow-hidden rounded-full ring-2 ring-neutral-700">
                   <img
-                    src="/diandre-dev.png"
+                    src="/diandre-dev-sharper.png"
                     alt="Diandre Miller"
                     className="h-full w-full object-cover"
                   />
