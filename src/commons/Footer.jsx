@@ -15,7 +15,7 @@ const Footer = () => {
             href="https://github.com/DiandreMiller"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-white transition-colors flex items-center space-x-1"
+            className="hover:text-white hover:drop-shadow-[0_0_8px_#ffffff] transition duration-300 flex items-center space-x-1"
           >
             <Github size={18} />
             <span>GitHub</span>
@@ -24,7 +24,7 @@ const Footer = () => {
             href="https://linkedin.com/in/diandre-miller/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-white transition-colors flex items-center space-x-1"
+            className="hover:text-white hover:drop-shadow-[0_0_8px_#3b82f6] transition duration-300 flex items-center space-x-1"
           >
             <Linkedin size={18} />
             <span>LinkedIn</span>
@@ -33,7 +33,7 @@ const Footer = () => {
             href="https://tiktok.com/@keepit100Dre"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-white transition-colors flex items-center space-x-1"
+            className="hover:text-white hover:drop-shadow-[0_0_8px_#ff0050] transition duration-300 flex items-center space-x-1"
           >
             {/* TikTok SVG icon */}
             <svg
