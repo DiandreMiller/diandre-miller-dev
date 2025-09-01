@@ -37,9 +37,16 @@ const About = () => {
             <div className="mt-8 space-y-5 text-gray-300 leading-relaxed">
               <p>
                 Earlier in my career I worked at{" "}
-                <span className="text-blue-400 font-medium">
-                  East Flatbush Village, Inc.
-                </span>{" "}
+                  <a
+                    href="https://eastflatbushvillage.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                  <span className="cursor-pointer text-blue-400 font-medium">
+                    East Flatbush Village, Inc.
+                  </span>{" "}
+                </a>
+               
                 as Administrative Director and Assistant Program Director. I loved
                 the impact and community focus. A health setback pushed me to
                 learn new skills — starting with video editing — and that momentum
