@@ -3,30 +3,28 @@ import { Link } from "react-router-dom";
 const About = () => {
   return (
     <main className="min-h-screen bg-neutral-950 text-gray-200 px-6 pb-24 pt-28">
-      {/* container */}
       <section className="mx-auto max-w-5xl">
-        {/* card */}
         <div className="rounded-2xl border border-neutral-800 bg-neutral-900/80 shadow-2xl">
-          {/* top: avatar + heading */}
           <div className="p-8 sm:p-10 md:p-12">
             <div className="grid gap-8 md:grid-cols-[220px,1fr] md:items-center">
-              {/* avatar */}
               <div className="flex md:block justify-center">
-                <div className="relative h-40 w-40 overflow-hidden rounded-full ring-2 ring-neutral-700">
+                <div className="group relative h-40 w-40 overflow-hidden rounded-full ring-2 ring-neutral-700">
                   <img
-                    src="/diandre-dev-sharper.png"
+                    src="/diandre-dev.png"
                     alt="Diandre Miller"
                     className="h-full w-full object-cover"
                   />
+                  <p className="absolute inset-0 flex items-center justify-center px-4 text-center text-sm italic text-orange-400 bg-black/70 opacity-0 group-hover:opacity-100 transition duration-300">
+                    Character is who you are when no one is watching.
+                  </p>
                 </div>
               </div>
 
-              {/* heading + intro */}
               <div>
                 <h1 className="text-3xl sm:text-4xl font-bold text-white">
                   Hey, I’m <span className="text-green-400">Diandre Miller</span>
                 </h1>
-                <p className="mt-3 text-lg text-gray-300">
+                <p className="mt-4 text-lg text-gray-300">
                   Software developer from Brooklyn who loves turning ideas into
                   real, useful things. I pivoted from community leadership into
                   tech, taught myself video editing, and then committed to an
@@ -36,7 +34,6 @@ const About = () => {
               </div>
             </div>
 
-            {/* body copy */}
             <div className="mt-8 space-y-5 text-gray-300 leading-relaxed">
               <p>
                 Earlier in my career I worked at{" "}
@@ -56,7 +53,6 @@ const About = () => {
               </p>
             </div>
 
-            {/* chips / stack */}
             <div className="mt-8 flex flex-wrap gap-2">
               {["React", "TypeScript", "Tailwind CSS", "Node.js", "Vite"].map((t) => (
                 <span
@@ -68,10 +64,9 @@ const About = () => {
               ))}
             </div>
 
-            {/* actions */}
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
-                to="/contact"
+                to="/contact-me"
                 className="inline-flex items-center justify-center rounded-full border border-green-500 px-5 py-2.5 text-sm font-semibold text-green-400 hover:bg-green-500/10 transition"
               >
                 Contact Me
