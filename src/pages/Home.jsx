@@ -11,7 +11,6 @@ const Home = () => {
     <div className="flex items-center justify-center h-screen relative">
       <MatrixBackground />
 
-      {/* Logo wrapper */}
       <div className="relative group flex flex-col items-center">
         <img
           className="w-100 transition duration-300 group-hover:brightness-50"
@@ -19,7 +18,6 @@ const Home = () => {
           alt="Diandre Miller"
         />
 
-        {/* Enter pill positioned on top of the logo */}
         <span
           onClick={() => navigate('/about-me')}
           className="
