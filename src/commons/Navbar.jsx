@@ -22,7 +22,7 @@ const Navbar = () => {
         </li>
         <li>
           <Link
-            to="/contact"
+            to="/contact-me"
             className="hover:text-pink-400 hover:drop-shadow-[0_0_8px_#ec4899] transition duration-300"
           >
             Contact Me
