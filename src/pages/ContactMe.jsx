@@ -1,34 +1,40 @@
+import { useState } from "react";
 import { Mail, Phone, Github, Linkedin } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const ContactMe = () => {
   const navigate = useNavigate();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // helper to encode FormData for Netlify
+  // helper: encode FormData into x-www-form-urlencoded
   const encode = (formData) => new URLSearchParams(formData).toString();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (isSubmitting) return; // guard against double-click
+
+    setIsSubmitting(true);
 
     const form = e.target;
     const formData = new FormData(form);
 
-    // Netlify needs form-name in the POST body
+    // Netlify requires form-name in the POST body
     formData.set("form-name", "contact");
 
-    // Console log what's being sent
+    // Log values before sending
     console.log("Message being sent:", Object.fromEntries(formData.entries()));
 
     try {
-      await fetch("/", {
-        method: "POST",
+      await axios.post("/", encode(formData), {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode(formData),
       });
       navigate("/success");
     } catch (err) {
       console.error("Form submission error:", err);
       alert("Oops, something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -127,9 +133,39 @@ const ContactMe = () => {
           <div className="flex justify-end">
             <button
               type="submit"
-              className="rounded-full border border-green-500 px-6 py-2.5 font-semibold text-green-400 hover:bg-green-500/10 transition"
+              disabled={isSubmitting}
+              className={`rounded-full border px-6 py-2.5 font-semibold transition
+                ${isSubmitting
+                  ? "border-neutral-700 text-neutral-400 cursor-not-allowed"
+                  : "border-green-500 text-green-400 hover:bg-green-500/10"
+                }`}
             >
-              Send Message
+              {isSubmitting ? (
+                <span className="inline-flex items-center gap-2">
+                  <svg
+                    className="animate-spin h-4 w-4 text-current"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    />
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                    />
+                  </svg>
+                  Sending…
+                </span>
+              ) : (
+                "Send Message"
+              )}
             </button>
           </div>
         </form>
