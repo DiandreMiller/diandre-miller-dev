@@ -1,6 +1,8 @@
 import { Mail, Phone, Github, Linkedin } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
+//Add protections against scripting attacks
+
 const ContactMe = () => {
   const navigate = useNavigate();
 
