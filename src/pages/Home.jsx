@@ -19,7 +19,7 @@ const Home = () => {
         />
 
       <h2 className="absolute inset-0 flex items-center justify-center">
-        <span className="cursor-pointer px-5 py-2 border-2 border-red-500 lg:font-extrabold text-red-700 text-[22px] font-semibold rounded-full animate-heartbeat willchange-beat translate-y-42">
+        <span className="cursor-pointer px-5 py-2 border-2 border-red-500 lg:font-extrabold text-red-700 text-[1vw] font-semibold rounded-full animate-heartbeat willchange-beat translate-y-42">
           Enter
         </span>
       </h2>
