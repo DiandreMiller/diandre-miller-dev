@@ -3,14 +3,12 @@ import { Link } from "react-router-dom";
 const Success = () => (
   <main className="min-h-screen bg-neutral-950 text-gray-200 flex items-center justify-center px-6">
     <section className="relative max-w-2xl w-full">
-      {/* soft background glow */}
       <div
         className="absolute -inset-10 rounded-3xl bg-gradient-to-b from-green-600/15 via-emerald-500/10 to-transparent blur-3xl"
         aria-hidden
       />
 
       <div className="relative w-full rounded-2xl border border-neutral-800 bg-neutral-900/80 shadow-2xl backdrop-blur p-12 text-center">
-        {/* success badge */}
         <div className="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-green-500/15 ring-1 ring-green-500/30">
           <svg
             viewBox="0 0 24 24"
@@ -33,10 +31,8 @@ const Success = () => (
           Thanks for reaching out — I’ll get back to you ASAP.
         </p>
 
-        {/* divider */}
         <div className="my-10 h-px w-full bg-gradient-to-r from-transparent via-neutral-800 to-transparent" />
 
-        {/* actions */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             to="/"
