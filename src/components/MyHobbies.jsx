@@ -12,7 +12,7 @@ const MyHobbies = () => {
     {
       name: "Listening to Music",
       icon: <Music className="h-8 w-8 text-pink-400" />,
-      desc: "Finding inspiration and energy through sound.",
+      desc: "Finding inspiration and energy through sound. Tupac is the GOAT.",
     },
     {
       name: "Basketball",
