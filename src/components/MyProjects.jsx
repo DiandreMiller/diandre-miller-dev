@@ -17,7 +17,7 @@ const MyProjects = () => {
       name: "Interactive Resume",
       img: interactiveResume,
       link: "https://diandremillerinteractiveresume.netlify.app/",
-      desc: "If you love basketball, resumes, and game, you'll love this app.",
+      desc: "If you love basketball, resumes, and games, you'll love this app.",
     },
     {
       name: "Red Canary Secure Login Challenge",
