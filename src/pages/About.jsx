@@ -55,10 +55,10 @@ const About = () => {
                 led me into software development.
               </p>
               <p>
-                Today I build with modern JavaScript, React, and Tailwind. I enjoy
-                shipping crisp, accessible interfaces and solving real problems
-                through code. If something feels missing in the world, I want to
-                build it.
+              Today I build with modern JavaScript, React, Tailwind, Node.js, and 
+              Express, while also working with Python for backend and scripting tasks. 
+              I enjoy shipping crisp, accessible interfaces and solving real problems 
+              through code. If something feels missing in the world, I want to build it.
               </p>
             </div>
 
