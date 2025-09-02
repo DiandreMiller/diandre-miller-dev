@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import MyHobbies from '../components/MyHobbies'
 
 const About = () => {
   return (
@@ -89,6 +90,7 @@ const About = () => {
             </div>
           </div>
         </div>
+        <MyHobbies />
       </section>
     </main>
   );
