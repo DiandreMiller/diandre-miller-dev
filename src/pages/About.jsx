@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import MyHobbies from '../components/MyHobbies'
+import MyHobbies from '../components/MyHobbies';
 
 const About = () => {
   return (
