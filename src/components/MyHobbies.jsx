@@ -20,16 +20,6 @@ const MyHobbies = () => {
       desc: "Playing and watching — Kobe Bryant is my favorite player.",
     },
     {
-      name: "Reading",
-      icon: <BookOpen className="h-8 w-8 text-blue-400" />,
-      desc: "Learning and exploring new perspectives through books.",
-    },
-    {
-      name: "Pet Lover",
-      icon: <PawPrint className="h-8 w-8 text-yellow-400" />,
-      desc: "I enjoy spending time with and caring for animals.",
-    },
-    {
       name: "Spending Time with Girlfriend",
       icon: (
         <img
@@ -39,6 +29,16 @@ const MyHobbies = () => {
         />
       ),
       desc: "Sharing laughs and experiences together ❤️.",
+    },
+    {
+      name: "Reading",
+      icon: <BookOpen className="h-8 w-8 text-blue-400" />,
+      desc: "Learning and exploring new perspectives through books.",
+    },
+    {
+      name: "Pet Lover",
+      icon: <PawPrint className="h-8 w-8 text-yellow-400" />,
+      desc: "I enjoy spending time with and caring for animals.",
     },
     {
       name: "Friends & Family",
