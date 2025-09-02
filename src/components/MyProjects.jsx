@@ -10,37 +10,37 @@ const MyProjects = () => {
     {
       name: "D-CreatorVerse",
       img: dCreatorVerse,
-      link: "https://example.com/dcreatorverse",
+      link: "https://dcreatorverse.netlify.app/",
       desc: "A creative digital platform for exploring 3D environments.",
     },
     {
       name: "Interactive Resume",
       img: interactiveResume,
-      link: "https://example.com/interactiveresume",
+      link: "https://diandremillerinteractiveresume.netlify.app/",
       desc: "A resume brought to life with interactive features.",
     },
     {
       name: "Red Canary Secure Login Challenge",
       img: redCanarySecureLoginChallenge,
-      link: "https://example.com/redcanary",
+      link: "https://rc-secure-login-front-end.netlify.app/",
       desc: "A secure login system built for a technical challenge.",
     },
     {
       name: "SmrtCart",
       img: smrtCart,
-      link: "https://example.com/smrtcart",
+      link: "https://smrtcart.netlify.app/",
       desc: "A shopping app designed for smarter price comparisons.",
     },
     {
       name: "3M YouTube Clone",
       img: threeMYoutube,
-      link: "https://example.com/3myoutube",
+      link: "https://three-m-youtube.netlify.app/",
       desc: "A YouTube-inspired platform built from scratch.",
     },
     {
       name: "WealthWise",
       img: wealthWise,
-      link: "https://example.com/wealthwise",
+      link: "https://wealthwisefinancialplanner.netlify.app/",
       desc: "A financial planning app to manage income and expenses.",
     },
   ];
