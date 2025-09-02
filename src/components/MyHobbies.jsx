@@ -25,7 +25,7 @@ const MyHobbies = () => {
         <img
           src={libyaDiandre}
           alt="Diandre and Girlfriend"
-          className="h-12 w-12 object-contain rounded-full border-2 border-pink-400 shadow-md"
+          className="h-16 w-16 object-cover rounded-full border-2 border-pink-400 shadow-[0_0_12px_#ec4899]"
         />
       ),
       desc: "Sharing laughs and experiences together ❤️.",
