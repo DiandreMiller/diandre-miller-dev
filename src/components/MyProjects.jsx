@@ -11,13 +11,13 @@ const MyProjects = () => {
       name: "D-CreatorVerse",
       img: dCreatorVerse,
       link: "https://dcreatorverse.netlify.app/",
-      desc: "A creative digital platform for exploring 3D environments.",
+      desc: "A creative digital platform where you can explore your favorite creators.",
     },
     {
       name: "Interactive Resume",
       img: interactiveResume,
       link: "https://diandremillerinteractiveresume.netlify.app/",
-      desc: "A resume brought to life with interactive features.",
+      desc: "If you love basketball, resumes, and game, you'll love this app.",
     },
     {
       name: "Red Canary Secure Login Challenge",
@@ -29,7 +29,7 @@ const MyProjects = () => {
       name: "SmrtCart",
       img: smrtCart,
       link: "https://smrtcart.netlify.app/",
-      desc: "A shopping app designed for smarter price comparisons.",
+      desc: "A shopping app designed for smarter price comparisons saving you $$$$",
     },
     {
       name: "3M YouTube Clone",
