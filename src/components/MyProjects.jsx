@@ -5,6 +5,8 @@ import smrtCart from "../assets/smrtCart.png";
 import threeMYoutube from "../assets/threeMYoutube.png";
 import wealthWise from "../assets/wealthWise.png";
 
+//ToDo: Have Screenshots of the project flashing
+
 const MyProjects = () => {
   const projects = [
     {
