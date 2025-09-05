@@ -1,13 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import diandreleft from "../assets/diandre_left.png";
 import diandreright from "../assets/diandre_right.png";
 
 const ZOOM_DURATION_MS = 3200;      // how long the initial zoom runs
 const EXPAND_FULL_AFTER_MS = 2800;  // when to switch canvas to fullscreen (near end of zoom)
+const FULLSCREEN_ANIM_MS = 700;     // must match the transition duration when expandFull = true
 
 const EnterTheMatrix = () => {
   const canvasRef = useRef(null);
+  const navigate = useNavigate();
+
   const [isOpen, setIsOpen] = useState(false);
   const [startRain, setStartRain] = useState(false);
   const [expandFull, setExpandFull] = useState(false);
@@ -29,6 +33,15 @@ const EnterTheMatrix = () => {
     }, EXPAND_FULL_AFTER_MS);
     return () => clearTimeout(tExpand);
   }, [startRain]);
+
+  // After the box is fullscreen, wait for the expand animation to finish, then navigate
+  useEffect(() => {
+    if (!expandFull) return;
+    const t = setTimeout(() => {
+      navigate("/about-me");
+    }, FULLSCREEN_ANIM_MS);
+    return () => clearTimeout(t);
+  }, [expandFull, navigate]);
 
   // Matrix center-ward effect + responsive sizing
   useEffect(() => {
@@ -52,7 +65,7 @@ const EnterTheMatrix = () => {
     const choose = (arr) => arr[(Math.random() * arr.length) | 0];
 
     const sizeCanvas = () => {
-      // ✅ fullscreen: use viewport; else use element box
+      // fullscreen: use viewport; else use element box
       if (expandFull) {
         cssW = window.innerWidth;
         cssH = window.innerHeight;
@@ -169,14 +182,14 @@ const EnterTheMatrix = () => {
       cancelAnimationFrame(raf);
       window.removeEventListener("resize", onResize);
     };
-  }, [startRain, expandFull]); // include expandFull so sizing updates
+  }, [startRain, expandFull]);
 
   return (
     <div
-        className="fixed inset-0 flex justify-center items-center bg-black overflow-hidden cursor-pointer [perspective:1200px]"
-        onClick={() => setIsOpen(true)}
-        role="button"
-        aria-label="Enter the Matrix"
+      className="fixed inset-0 flex justify-center items-center bg-black overflow-hidden cursor-pointer [perspective:1200px]"
+      onClick={() => setIsOpen(true)}
+      role="button"
+      aria-label="Enter the Matrix"
     >
       {/* Left half — rotate on open, fade during zoom */}
       <motion.img
@@ -184,10 +197,7 @@ const EnterTheMatrix = () => {
         src={diandreleft}
         alt="left half of Diandre"
         initial={false}
-        animate={{
-          rotateY: isOpen ? 85 : 0,
-          opacity: startRain ? 0 : 1,
-        }}
+        animate={{ rotateY: isOpen ? 85 : 0, opacity: startRain ? 0 : 1 }}
         transition={{
           rotateY: { duration: 1.5, ease: "easeInOut" },
           opacity: { duration: ZOOM_DURATION_MS / 1000, ease: "easeInOut" },
@@ -211,7 +221,7 @@ const EnterTheMatrix = () => {
             : { scale: 1 }
         }
         transition={{
-          duration: expandFull ? 0.7 : ZOOM_DURATION_MS / 1000,
+          duration: expandFull ? FULLSCREEN_ANIM_MS / 1000 : ZOOM_DURATION_MS / 1000,
           ease: "easeInOut",
         }}
         style={{ transformOrigin: "50% 50%" }}
@@ -219,11 +229,11 @@ const EnterTheMatrix = () => {
         <canvas
           ref={canvasRef}
           className={
-            "transition-opacity duration-700 " +
+            "block transition-opacity duration-700 " +
             (startRain ? "opacity-100 " : "opacity-0 ") +
             (expandFull
-              ? "w-full h-full rounded-none translate-y-0" // <-- fill the fixed wrapper
-              : "w-[18vw] sm:w-[14vw] lg:w-[vw] h-[40vh] sm:h-[38vh] lg:h-[42vh] max-w-[200px] min-w-[100px] max-h-[360px] min-h-[180px] rounded-[10px] translate-y-[8%]"
+              ? "w-full h-full rounded-none translate-y-0"
+              : "w-[18vw] sm:w-[14vw] lg:w-[12vw] h-[40vh] sm:h-[38vh] lg:h-[42vh] max-w-[200px] min-w-[100px] max-h-[360px] min-h-[180px] rounded-[10px] translate-y-[8%]"
             )
           }
           style={{
@@ -241,10 +251,7 @@ const EnterTheMatrix = () => {
         src={diandreright}
         alt="right half of Diandre"
         initial={false}
-        animate={{
-          rotateY: isOpen ? -85 : 0,
-          opacity: startRain ? 0 : 1,
-        }}
+        animate={{ rotateY: isOpen ? -85 : 0, opacity: startRain ? 0 : 1 }}
         transition={{
           rotateY: { duration: 1.5, ease: "easeInOut" },
           opacity: { duration: ZOOM_DURATION_MS / 1000, ease: "easeInOut" },
