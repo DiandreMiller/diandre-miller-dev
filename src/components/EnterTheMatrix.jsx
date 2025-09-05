@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import diandreleft from "../assets/diandre_left.png";
 import diandreright from "../assets/diandre_right.png";
-import { motion } from "framer-motion";
 
 const ZOOM_DURATION_MS = 3200;      // how long the initial zoom runs
 const EXPAND_FULL_AFTER_MS = 2800;  // when to switch canvas to fullscreen (near end of zoom)
@@ -27,11 +27,10 @@ const EnterTheMatrix = () => {
       // ensure canvas resizes crisply to the new full-screen box
       setTimeout(() => window.dispatchEvent(new Event("resize")), 60);
     }, EXPAND_FULL_AFTER_MS);
-
     return () => clearTimeout(tExpand);
   }, [startRain]);
 
-  // Matrix center-ward effect (unchanged motion)
+  // Matrix center-ward effect + responsive sizing
   useEffect(() => {
     if (!startRain) return;
     const canvas = canvasRef.current;
@@ -48,14 +47,19 @@ const EnterTheMatrix = () => {
     const BASE_SIZE = 14;
 
     const particles = [];
-
     const rand = (a, b) => a + Math.random() * (b - a);
     const randInt = (a, b) => Math.floor(rand(a, b + 1));
     const choose = (arr) => arr[(Math.random() * arr.length) | 0];
 
     const sizeCanvas = () => {
-      cssW = canvas.offsetWidth;
-      cssH = canvas.offsetHeight;
+      // ✅ fullscreen: use viewport; else use element box
+      if (expandFull) {
+        cssW = window.innerWidth;
+        cssH = window.innerHeight;
+      } else {
+        cssW = canvas.clientWidth;
+        cssH = canvas.clientHeight;
+      }
       const dpr = Math.max(1, window.devicePixelRatio || 1);
       canvas.width = Math.floor(cssW * dpr);
       canvas.height = Math.floor(cssH * dpr);
@@ -66,30 +70,18 @@ const EnterTheMatrix = () => {
       const edge = choose(["top", "right", "bottom", "left"]);
       let x, y;
       const overshoot = 10;
-
       switch (edge) {
         case "top":
-          x = rand(-overshoot, cssW + overshoot);
-          y = -overshoot;
-          break;
+          x = rand(-overshoot, cssW + overshoot); y = -overshoot; break;
         case "bottom":
-          x = rand(-overshoot, cssW + overshoot);
-          y = cssH + overshoot;
-          break;
+          x = rand(-overshoot, cssW + overshoot); y = cssH + overshoot; break;
         case "left":
-          x = -overshoot;
-          y = rand(-overshoot, cssH + overshoot);
-          break;
+          x = -overshoot; y = rand(-overshoot, cssH + overshoot); break;
         default:
-          x = cssW + overshoot;
-          y = rand(-overshoot, cssH + overshoot);
+          x = cssW + overshoot; y = rand(-overshoot, cssH + overshoot);
       }
-
       return {
-        x,
-        y,
-        vx: 0,
-        vy: 0,
+        x, y, vx: 0, vy: 0,
         ch: choose(letters),
         speedMul: rand(0.6, 1.4),
         delayFrames: randInt(0, 90),
@@ -141,7 +133,6 @@ const EnterTheMatrix = () => {
 
           p.x += p.vx;
           p.y += p.vy;
-
           p.life++;
         }
 
@@ -170,20 +161,22 @@ const EnterTheMatrix = () => {
 
     sizeCanvas();
     raf = requestAnimationFrame(step);
-    window.addEventListener("resize", sizeCanvas);
+
+    const onResize = () => sizeCanvas();
+    window.addEventListener("resize", onResize);
 
     return () => {
       cancelAnimationFrame(raf);
-      window.removeEventListener("resize", sizeCanvas);
+      window.removeEventListener("resize", onResize);
     };
-  }, [startRain]);
+  }, [startRain, expandFull]); // include expandFull so sizing updates
 
   return (
     <div
-      className="relative flex justify-center items-center h-screen bg-black overflow-hidden cursor-pointer [perspective:1200px]"
-      onClick={() => setIsOpen(true)}
-      role="button"
-      aria-label="Enter the Matrix"
+        className="fixed inset-0 flex justify-center items-center bg-black overflow-hidden cursor-pointer [perspective:1200px]"
+        onClick={() => setIsOpen(true)}
+        role="button"
+        aria-label="Enter the Matrix"
     >
       {/* Left half — rotate on open, fade during zoom */}
       <motion.img
@@ -193,7 +186,7 @@ const EnterTheMatrix = () => {
         initial={false}
         animate={{
           rotateY: isOpen ? 85 : 0,
-          opacity: startRain ? 0 : 1, // fade during zoom
+          opacity: startRain ? 0 : 1,
         }}
         transition={{
           rotateY: { duration: 1.5, ease: "easeInOut" },
@@ -202,13 +195,19 @@ const EnterTheMatrix = () => {
         style={{ transformOrigin: "center" }}
       />
 
-      {/* Matrix canvas wrapper — zooms while centered, then goes fullscreen */}
+      {/* Matrix canvas wrapper — centered first, then FIXED fullscreen */}
       <motion.div
-        className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center will-change-transform"
+        className={
+          "pointer-events-none z-10 will-change-transform " +
+          (expandFull
+            ? "fixed inset-0"                                   // fullscreen phase
+            : "absolute inset-0 flex items-center justify-center" // centered box phase
+          )
+        }
         initial={{ scale: 1 }}
         animate={
           startRain
-            ? (expandFull ? { scale: 1 } : { scale: 2.6 })
+            ? (expandFull ? { scaleX: 1, scaleY: 1 } : { scaleX: 7.4, scaleY: 3.0 })
             : { scale: 1 }
         }
         transition={{
@@ -220,11 +219,11 @@ const EnterTheMatrix = () => {
         <canvas
           ref={canvasRef}
           className={
-            `transition-opacity duration-700 ` +
+            "transition-opacity duration-700 " +
             (startRain ? "opacity-100 " : "opacity-0 ") +
             (expandFull
-              ? "w-screen h-screen rounded-none translate-y-0"
-              : "w-[18vw] sm:w-[14vw] lg:w-[12vw] h-[40vh] sm:h-[38vh] lg:h-[42vh] max-w-[220px] min-w-[100px] max-h-[360px] min-h-[180px] rounded-[10px] translate-y-[8%]"
+              ? "w-full h-full rounded-none translate-y-0" // <-- fill the fixed wrapper
+              : "w-[18vw] sm:w-[14vw] lg:w-[vw] h-[40vh] sm:h-[38vh] lg:h-[42vh] max-w-[200px] min-w-[100px] max-h-[360px] min-h-[180px] rounded-[10px] translate-y-[8%]"
             )
           }
           style={{
@@ -244,7 +243,7 @@ const EnterTheMatrix = () => {
         initial={false}
         animate={{
           rotateY: isOpen ? -85 : 0,
-          opacity: startRain ? 0 : 1, // fade during zoom
+          opacity: startRain ? 0 : 1,
         }}
         transition={{
           rotateY: { duration: 1.5, ease: "easeInOut" },
