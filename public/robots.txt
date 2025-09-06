@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /email-sent
 
 Sitemap: https://diandremillerdev.netlify.app/sitemap.xml
