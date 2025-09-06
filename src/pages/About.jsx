@@ -96,8 +96,8 @@ const About = () => {
                 </p>
               </div>
 
-              <div className="mt-8 flex flex-wrap gap-2">
-                {["React", "Vite", "Node.js", "PostgreSQL", "Express", "Javascript", "TypeScript", "Python", "Tailwind CSS", "Vanilla CSS"].map((t) => (
+              <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                {["React", "Vite", "Node.js", "PostgreSQL", "Sequelize", "Express", "Supabase", "Javascript", "TypeScript", "Python", "Tailwind CSS", "Vanilla CSS"].map((t) => (
                   <span
                     key={t}
                     className="rounded-full border border-neutral-700 bg-neutral-800 px-3 py-1 text-xs text-gray-300"
