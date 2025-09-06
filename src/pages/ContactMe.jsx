@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Mail, Phone, Github, Linkedin } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import DOMPurify from "dompurify";
@@ -10,10 +10,21 @@ const sanitizeText = (val) =>
 const ContactMe = () => {
   const navigate = useNavigate();
 
-
+// State for email
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+
+  // State for anti-spam
+
+  const [canSubmit, setCanSubmit] = useState(false);
+  const [status, setStatus] = useState('');
+  const mountedAtRef = useRef(Date.now());
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => setCanSubmit(true), 3000);
+    return () => clearTimeout(timeoutId);;
+  },[])
 
   // encode sanitized values for Netlify
   const encode = () => {
@@ -27,6 +38,11 @@ const ContactMe = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    const elasped = Date.now() - mountedAtRef.current
+    if(elasped < 3000) {
+      return 'Please waiting before attempting another submission';
+    }
 
     try {
       await fetch("/", {
@@ -207,9 +223,11 @@ const ContactMe = () => {
             <div className="flex justify-end">
               <button
                 type="submit"
-                className="rounded-full border border-green-500 px-6 py-2.5 font-semibold text-green-400 hover:bg-green-500/10 transition"
+                disabled={!canSubmit}
+                aria-disabled={!canSubmit}
+                className="rounded-full border border-green-500 px-6 py-2.5 font-semibold text-green-400 hover:bg-green-500/10 transition disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Send Message
+                {canSubmit ? 'Send Message': 'Please Wait'}
               </button>
             </div>
           </form>
