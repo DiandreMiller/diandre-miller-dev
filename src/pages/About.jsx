@@ -6,15 +6,15 @@ const About = () => {
   return (
     <>
        {/* Page-specific metadata */}
-       <title>About Me | Diandre Miller Dev</title>
+       <title>About Me | Diandre Miller</title>
       <meta
         name="description"
-        content="Learn about Diandre Miller Dev, a full stack software engineer with expertise in React, Node.js, and PostgreSQL."
+        content="Learn about Diandre Miller, a full stack software engineer with expertise in React, Node.js, and PostgreSQL."
       />
-      <meta property="og:title" content="About Me | Diandre Miller Dev" />
+      <meta property="og:title" content="About Me | Diandre Miller" />
       <meta
         property="og:description"
-        content="Discover the background, skills, and journey of Diandre Miller Dev, a full stack software engineer."
+        content="Discover the background, skills, and journey of Diandre Miller, a full stack software engineer."
       />
       <meta
         property="og:url"
@@ -27,11 +27,11 @@ const About = () => {
       <meta name="twitter:card" content="summary_large_image" />
       <meta
         name="twitter:title"
-        content="About Me | Diandre Miller Dev"
+        content="About Me | Diandre Miller"
       />
       <meta
         name="twitter:description"
-        content="Learn more about the experience and skills of Diandre Miller Dev."
+        content="Learn more about the experience and skills of Diandre Miller."
       />
       <meta
         name="twitter:image"
