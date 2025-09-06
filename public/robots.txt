@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://diandremillerdev.netlify.app/sitemap.xml
