@@ -12,6 +12,7 @@ import Success from './pages/Success';
 
 // Test Component
 // import EnterTheMatrix from './components/EnterTheMatrix';
+import Test from './pages/Test';
 
 
 // Layout to include header and footer in everything but the home page and 404 page
@@ -22,6 +23,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route element={<Home />} path='/' />
+        <Route element={<Test />} path='/test' />
         {/* <Route element={<EnterTheMatrix />} path='enter-the-matrix' /> */}
         <Route element={<Layout />}>
           <Route element={<About />} path='/about-me' />

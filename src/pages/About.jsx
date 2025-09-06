@@ -84,9 +84,17 @@ const About = () => {
                 href="https://github.com/DiandreMiller"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full border border-neutral-700 px-5 py-2.5 text-sm font-semibold text-gray-300 hover:bg-neutral-800 transition"
+                className="inline-flex items-center justify-center rounded-full border border-neutral-700 px-5 py-2.5 text-sm font-semibold text-gray-300 hover:bg-yellow-300 transition"
               >
                 GitHub
+              </a>
+              <a
+                href="/FSW-Diandre-September-2025-Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-full border border-neutral-700 px-5 py-2.5 text-sm font-semibold text-gray-300 hover:bg-red-400 transition"
+              >
+                Resume
               </a>
             </div>
           </div>
