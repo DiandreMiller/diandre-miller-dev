@@ -1,10 +1,11 @@
 import { SitemapStream, streamToPromise } from 'sitemap';
 import { createWriteStream } from 'fs';
 
+const today = new Date().toISOString().split('T')[0];
 const links = [
-  { url: '/', changefreq: 'monthly', priority: 1.0 },
-  { url: '/about-me', changefreq: 'monthly', priority: 0.8 },
-  { url: '/contact-me', changefreq: 'monthly', priority: 0.7 },
+  { url: '/', changefreq: 'monthly', priority: 1.0, lastmod: today },
+  { url: '/about-me', changefreq: 'monthly', priority: 0.8, lastmod: today },
+  { url: '/contact-me', changefreq: 'monthly', priority: 0.7, lastmod: today },
 ];
 
 // Base URL of deployed site
