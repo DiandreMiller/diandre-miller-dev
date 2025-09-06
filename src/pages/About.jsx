@@ -5,7 +5,7 @@ import MyProjects from "../components/MyProjects";
 const About = () => {
   return (
     <>
-       {/* Page-specific metadata */}
+       {/* About me metadata */}
        <title>About Me | Diandre Miller</title>
       <meta
         name="description"
