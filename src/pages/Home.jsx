@@ -36,7 +36,24 @@ const Home = () => {
         content="Portfolio of Diandre Miller, full stack software engineer. View projects and contact me."
       />
       <meta name="twitter:image" content="https://diandremillerdev.netlify.app/diandre-dev.png" />
-
+      {/* ✅ JSON-LD for HomePage + Person reference */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "@id": "https://diandremillerdev.netlify.app/#webpage",
+          "url": "https://diandremillerdev.netlify.app/",
+          "name": "Diandre Miller | Full Stack Software Engineer",
+          "description":
+            "Portfolio of Diandre Miller, a full stack software engineer specializing in React, Node.js, and PostgreSQL. Explore projects and get in touch.",
+          "author": {
+            "@id": "https://diandremillerdev.netlify.app/#person"
+          },
+          "publisher": {
+            "@id": "https://diandremillerdev.netlify.app/#person"
+          }
+        })}
+      </script>
       {/* Home Page */}
       <div className="flex items-center justify-center h-screen relative">
         <MatrixBackground />

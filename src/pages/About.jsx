@@ -47,6 +47,7 @@ const About = () => {
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Person",
+          "@id": "https://diandremillerdev.netlify.app/#person",
           name: "Diandre Miller",
           jobTitle: "Full Stack Software Engineer",
           url: "https://diandremillerdev.netlify.app/",
