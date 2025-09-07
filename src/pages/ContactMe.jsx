@@ -95,7 +95,7 @@ const ContactMe = () => {
         content="https://diandremillerdev.netlify.app/diandre-dev.png"
       />
 
-      {/* Optional: JSON-LD to help search engines understand this is a contact page */}
+      {/* JSON-LD to help search engines understand this is a contact page */}
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
@@ -105,10 +105,21 @@ const ContactMe = () => {
           about: {
             "@type": "Person",
             name: "Diandre Miller",
+            jobTitle: "Full Stack Software Engineer",
             url: "https://diandremillerdev.netlify.app/",
             sameAs: [
               "https://github.com/DiandreMiller",
               "https://www.linkedin.com/in/diandre-miller/"
+            ],
+            contactPoint: [
+              {
+                "@type": "ContactPoint",
+                contactType: "customer support",
+                email: "millerdiandre@gmail.com",
+                telephone: "+1-973-780-4709",
+                areaServed: "US",
+                availableLanguage: ["English"]
+              }
             ]
           }
         })}
