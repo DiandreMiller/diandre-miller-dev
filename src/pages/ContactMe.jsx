@@ -16,9 +16,7 @@ const ContactMe = () => {
   const [message, setMessage] = useState("");
 
   // State for anti-spam
-
   const [canSubmit, setCanSubmit] = useState(false);
-  const [status, setStatus] = useState('');
   const mountedAtRef = useRef(Date.now());
 
   useEffect(() => {
@@ -65,6 +63,10 @@ const ContactMe = () => {
     <>
     {/* Contact me metadata */}
     <title>Contact | Diandre Miller Dev</title>
+    <link
+        rel="canonical"
+        href="https://diandremillerdev.netlify.app/contact-me"
+     />
       <meta
         name="description"
         content="Let’s connect. Hire, collaborate, or ask questions about development—reach out via email, phone, LinkedIn, GitHub, or the contact form."
