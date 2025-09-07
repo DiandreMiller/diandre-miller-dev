@@ -51,10 +51,10 @@ If you’d like to run this project locally:
 
 ```bash
 # Clone the repo
-git clone https://github.com/DiandreMiller/diandre-miller-dev-page.git
+git clone https://github.com/DiandreMiller/diandre-miller-dev.git
 
 # Navigate into the project folder
-cd diandre-miller-dev-page
+cd diandre-miller-dev
 
 # Install dependencies
 npm install
