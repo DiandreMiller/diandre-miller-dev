@@ -1,4 +1,4 @@
-# 🌐 Diandre Miller Dev Page
+# 👨🏾‍💻 Diandre Miller Dev Page
 
 Welcome to my personal developer portfolio site — a space where I showcase my projects, highlight my skills, and share my journey as a software engineer.
 
