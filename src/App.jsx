@@ -1,6 +1,5 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import './App.css';
-
 
 // Pages
 import Home from './pages/Home';
@@ -9,28 +8,37 @@ import FourOFour from './pages/FourOFour';
 import ContactMe from './pages/ContactMe';
 import Success from './pages/Success';
 
-// Todo
-// Match routes near route but slightly off
-
-// Test Component
-// import EnterTheMatrix from './components/EnterTheMatrix';
-
-
-// Layout to include header and footer in everything but the home page and 404 page
+// Layout
 import Layout from './components/Layout';
+
+// Catch-all near routes
+function AliasRouter() {
+  const { pathname } = useLocation();
+
+  const redirectIf = (base, to) => {
+    const re = new RegExp(`^/${base}[a-z0-9-]*$`, 'i');
+    return re.test(pathname) ? <Navigate to={`/${to}`} replace /> : null;
+  };
+
+  return (
+    redirectIf('about-me', 'about-me') ||
+    redirectIf('contact-me', 'contact-me') ||
+    redirectIf('email-sent', 'email-sent') ||
+    <FourOFour />
+  );
+}
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<Home />} path='/' />
-        {/* <Route element={<EnterTheMatrix />} path='enter-the-matrix' /> */}
+        <Route element={<Home />} path="/" />
         <Route element={<Layout />}>
-          <Route element={<About />} path='/about-me' />
-          <Route element={<ContactMe />} path='/contact-me' />
-          <Route element={<Success />} path="/email-sent"  />
+          <Route element={<About />} path="/about-me" />
+          <Route element={<ContactMe />} path="/contact-me" />
+          <Route element={<Success />} path="/email-sent" />
         </Route>
-        <Route element={<FourOFour />} path='/*' />
+        <Route element={<AliasRouter />} path="*" />
       </Routes>
     </BrowserRouter>
   );
