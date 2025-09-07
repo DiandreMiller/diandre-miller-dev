@@ -42,6 +42,20 @@ const About = () => {
         name="twitter:image"
         content="https://diandremillerdev.netlify.app/diandre-dev.png"
       />
+      {/* ✅ Person schema */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Diandre Miller",
+          jobTitle: "Full Stack Software Engineer",
+          url: "https://diandremillerdev.netlify.app/",
+          sameAs: [
+            "https://github.com/DiandreMiller",
+            "https://www.linkedin.com/in/diandre-miller/"
+          ]
+        })}
+      </script>
       {/* Page */}
       <main className="min-h-screen bg-neutral-950 text-gray-200 px-6 pb-24 pt-28">
         <section className="mx-auto max-w-5xl">
