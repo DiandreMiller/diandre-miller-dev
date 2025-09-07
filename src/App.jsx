@@ -32,13 +32,13 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<Home />} path="/" />
+        <Route element={<Home />} path='/' />
         <Route element={<Layout />}>
-          <Route element={<About />} path="/about-me" />
-          <Route element={<ContactMe />} path="/contact-me" />
-          <Route element={<Success />} path="/email-sent" />
+          <Route element={<About />} path='/about-me' />
+          <Route element={<ContactMe />} path='/contact-me' />
+          <Route element={<Success />} path='/email-sent' />
         </Route>
-        <Route element={<AliasRouter />} path="*" />
+        <Route element={<AliasRouter />} path='*' />
       </Routes>
     </BrowserRouter>
   );
