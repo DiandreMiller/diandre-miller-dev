@@ -79,7 +79,7 @@ const FourOFour = () => {
         content="https://diandremillerdev.netlify.app/diandre-dev.png"
       />
 
-      {/* Your existing 404 UI */}
+      {/* 404 UI */}
       <div className="fixed inset-0 overflow-hidden bg-black">
         <canvas
           id="matrix"
