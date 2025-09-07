@@ -39,7 +39,8 @@ const ContactMe = () => {
 
     const elasped = Date.now() - mountedAtRef.current
     if(elasped < 3000) {
-      return 'Please waiting before attempting another submission';
+      alert('Please waiting before attempting another submission');
+      return;
     }
 
     try {
@@ -116,7 +117,7 @@ const ContactMe = () => {
                 "@type": "ContactPoint",
                 contactType: "customer support",
                 email: "millerdiandre@gmail.com",
-                telephone: "+1-973-780-4709",
+                telephone: "+19737804709",
                 areaServed: "US",
                 availableLanguage: ["English"]
               }
