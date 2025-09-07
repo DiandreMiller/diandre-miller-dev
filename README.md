@@ -36,6 +36,7 @@ Welcome to my personal developer portfolio site — a space where I showcase my 
 - [Search Enginer Optimization (SEO)](https://developers.google.com/search/docs/fundamentals/seo-starter-guide?utm_source)
 - [Page Insights](https://pagespeed.web.dev/)
 - [Rich Result Test](https://search.google.com/test/rich-results)
+- [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/)
 ---
 
 ## 📂 My Other Projects
