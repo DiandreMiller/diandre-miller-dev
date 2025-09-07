@@ -1,4 +1,7 @@
-# 👨🏾‍💻 Diandre Miller Dev Page
+<h1>
+  <img src="./src/assets/diandre-dev-sharper.png" alt="Diandre Miller Dev" height="40"/>
+  Diandre Miller Dev Page 
+</h1>
 
 Welcome to my personal developer portfolio site — a space where I showcase my projects, highlight my skills, and share my journey as a software engineer.
 
