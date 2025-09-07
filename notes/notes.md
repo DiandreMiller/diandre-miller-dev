@@ -8,3 +8,4 @@
 - **Page Schemas**
 - **Crawlers**
 - **Spam Protection**
+- **Rich Test**
