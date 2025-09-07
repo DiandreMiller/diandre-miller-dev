@@ -31,6 +31,7 @@ Welcome to my personal developer portfolio site — a space where I showcase my 
 - [Inspiration Sites](https://www.sitepoint.com/how-to-build-a-stunning-portfolio-website-as-a-web-developer/)  
 - [Tailwind Cheatsheet](https://nerdcave.com/tailwind-cheat-sheet)
 - [Search Enginer Optimization (SEO)](https://developers.google.com/search/docs/fundamentals/seo-starter-guide?utm_source)
+- [Page Insights](https://pagespeed.web.dev/)
 ---
 
 ## 📂 My Other Projects
