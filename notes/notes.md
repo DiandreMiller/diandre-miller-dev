@@ -6,3 +6,5 @@
 - **Indexing**
 - **Twitter card**
 - **Page Schemas**
+- **Crawlers**
+- **Spam Protection**
