@@ -22,8 +22,9 @@ const Home = () => {
         property="og:description"
         content="Explore the portfolio of Diandre Miller, showcasing projects in React, Node.js, and PostgreSQL."
       />
-      <meta property="og:image" content="https://diandremillerdev.netlify.app/diandre-dev.png" />
+      <meta property="og:image" content="https://diandremillerdev.netlify.app/og-home.jpg?v=2" />
       <meta property="og:url" content="https://diandremillerdev.netlify.app/" />
+      <meta property="og:site_name" content="Diandre Miller Dev" />
       <meta property="og:type" content="website" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
