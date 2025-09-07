@@ -10,13 +10,18 @@ const Home = () => {
   return (
     <>
       {/* ✅ Homepage SEO metadata */}
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="icon" type="image/svg+xml" href="/diandre-dev.png" />
+
       <title>Diandre Miller | Full Stack Software Engineer</title>
       <link rel="canonical" href="https://diandremillerdev.netlify.app/" />
       <meta
         name="description"
         content="Portfolio of Diandre Miller, a full stack software engineer specializing in React, Node.js, and PostgreSQL. Explore projects and get in touch."
       />
-      {/* Open Graph */}
+
+      {/* <!-- ✅ Open Graph --> */}
       <meta property="og:title" content="Diandre Miller | Full Stack Software Engineer" />
       <meta
         property="og:description"
@@ -29,14 +34,16 @@ const Home = () => {
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:image:alt" content="Diandre Miller portfolio cover" />
-      {/* Twitter Card */}
+
+      {/* <!-- ✅ Twitter Card --> */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Diandre Miller | Full Stack Software Engineer" />
       <meta
         name="twitter:description"
         content="Portfolio of Diandre Miller, full stack software engineer. View projects and contact me."
       />
-      <meta name="twitter:image" content="https://diandremillerdev.netlify.app/diandre-dev.png" />
+      <meta name="twitter:image" content="https://diandremillerdev.netlify.app/og-home.jpg?v=2" />
+
       {/* ✅ JSON-LD for HomePage + Person reference */}
       <script type="application/ld+json">
         {JSON.stringify({
