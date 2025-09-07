@@ -101,27 +101,16 @@ const ContactMe = () => {
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ContactPage",
-          name: "Contact | Diandre Miller Dev",
-          url: "https://diandremillerdev.netlify.app/contact-me",
-          about: {
-            "@type": "Person",
-            name: "Diandre Miller",
-            jobTitle: "Full Stack Software Engineer",
-            url: "https://diandremillerdev.netlify.app/",
-            sameAs: [
-              "https://github.com/DiandreMiller",
-              "https://www.linkedin.com/in/diandre-miller/"
-            ],
-            contactPoint: [
-              {
-                "@type": "ContactPoint",
-                contactType: "customer support",
-                email: "millerdiandre@gmail.com",
-                telephone: "+19737804709",
-                areaServed: "US",
-                availableLanguage: ["English"]
-              }
-            ]
+          "@id": "https://diandremillerdev.netlify.app/#contactpage",
+          "url": "https://diandremillerdev.netlify.app/contact-me",
+          "name": "Contact | Diandre Miller Dev",
+          "description":
+            "Hire, collaborate, or ask questions about development—reach out via email, phone, LinkedIn, GitHub, or the contact form.",
+          "about": {
+            "@id": "https://diandremillerdev.netlify.app/#person"
+          },
+          "mainEntity": {
+            "@id": "https://diandremillerdev.netlify.app/#person"
           }
         })}
       </script>
