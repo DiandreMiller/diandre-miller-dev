@@ -7,6 +7,11 @@ const About = () => {
     <>
        {/* About me metadata */}
        <title>About Me | Diandre Miller</title>
+       {/* cononical link about page */}
+       <link
+        rel="canonical"
+        href="https://diandremillerdev.netlify.app/about-me"
+       />
       <meta
         name="description"
         content="Learn about Diandre Miller, a full stack software engineer with expertise in React, Node.js, and PostgreSQL."
