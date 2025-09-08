@@ -1,5 +1,6 @@
 # Search Engine Optimization
 
+- **What is SEO**
 - **Robots.txt**
 - **Google Site Verification**
 - **Sitemap.xml**
