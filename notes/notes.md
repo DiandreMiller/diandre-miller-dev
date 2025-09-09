@@ -17,7 +17,7 @@ SEO (Search Engineer Optimization) is the process of making your website more vi
 
 ### Why Is SEO Important?
 
-It is important that your website shows up high in the results because a study by (Sistrix)[https://www.searchenginejournal.com/google-first-page-clicks/374516/] showed that 28.5 percent of people click the first result that shows up on a page in a search engine with the percentages sharply dropping off each result lower, while almost no one clicks on results on the second page.
+It is important that your website shows up high in the results because a study by [Sistrix](https://www.searchenginejournal.com/google-first-page-clicks/374516/) showed that 28.5 percent of people click the first result that shows up on a page in a search engine with the percentages sharply dropping off each result lower, while almost no one clicks on results on the second page.
 
 **SEO is important because:**
 
