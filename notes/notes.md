@@ -2,6 +2,8 @@
 
 - **What is SEO**
 - **Robots.txt**
+- **Open Graph**
+- **Schema Markup**
 - **Google Site Verification**
 - **Sitemap.xml**
 - **Indexing**
@@ -26,4 +28,40 @@ It is important that your website shows up high in the results because a study b
 - **Traffic without ads:** you get traffic without having to pay for ads
 
 - **Better UX:** SEI improvements (faster loading, good structure, acessible markup) improves the user experience. 
+
+### Types of SEO
+
+There are three main pillars of SEO. Those pillars are 
+
+1. On-Page SEO - Things you directly control in your code:
+
+- Titles, description, headings.
+
+- Keywords in text.
+
+- Clean urls (/about-me instead of /page?id=2).
+
+- Metada like Open Graph, Twitter Cards, canonical links
+
+- Schema markup (JSON-LD) that gives search engines structured meaning. 
+
+2. Techincal SEO - How well your site is built under the hood:
+
+- Fast loading, mobile-friendly.
+
+- Secure (HTTPS).
+
+- Sitemap and robotos.txt
+
+- Correct canonical URLs (avoid duplicate content issues).
+
+- Indexability (ensuring pages can be crawled and stored).
+
+3. Off-Page SEO - How the wider internet sees your site:
+
+- Backlinks(other sites linking to yours = votes of trust).
+
+- Social signals (shares, mentions).
+
+- Online reputation.
 
