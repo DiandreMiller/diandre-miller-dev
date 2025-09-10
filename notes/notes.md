@@ -65,3 +65,4 @@ There are three main pillars of SEO. Those pillars are
 
 - Online reputation.
 
+## Robots.txt
