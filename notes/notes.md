@@ -65,4 +65,8 @@ There are three main pillars of SEO. Those pillars are
 
 - Online reputation.
 
+### Summary
+
+SEO is the practice of making your site readable for two audiences at once: humans and search engines. Humans care about design and clarity; search engines care about structure and metadata.
+
 ## Robots.txt
