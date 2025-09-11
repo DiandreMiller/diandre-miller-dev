@@ -70,3 +70,62 @@ There are three main pillars of SEO. Those pillars are
 SEO is the practice of making your site readable for two audiences at once: humans and search engines. Humans care about design and clarity; search engines care about structure and metadata.
 
 ## Robots.txt
+
+robots.txt is a text file that sits at the root of your website (https://example.com/robots.txt)
+
+It tells search engine crawlers like googlebot, bingbot, DuckDuckBot etc., which pages or files are allowed to crawl, and should not be crawled. 
+
+It is essentially a set of traffic rules for bots.
+
+### Why it is important
+
+1. Controls crawl budget - Search engines only spend so much time crawling your site
+
+- You have 100+ pages, but only 5 are important, you don't want bots wasting time on other pages.
+
+2. Keep private or irrelevant pages hidden from bots
+
+- Routes like "/admin, /test /email-sent" doesn't need to be in the search results.
+
+3. Boost SEO indirectly
+
+- By focusing bots on important content, you help search engines index your core pages faster and better.
+
+### How it works
+
+- The file must be called robots.txt
+
+- It must live in the root of your site
+
+- Bots read it before crawling
+
+Here is how it should look:
+
+```
+//robots.txt
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /email-sent
+Sitemap: https://example.com/sitemap.xml
+```
+### Here's what that means:
+
+- User-agent: * -> applies to all bots
+
+- Allow: / -> crawls everything by default
+
+- Disallow: '/admin, email-sent' -> don't crawl those routes
+
+- Sitemap: -> points bots back to sitemap.xml for faster discovery of pages.
+
+It allows crawlers to see all you public facing pages but skips pages that has no SEO value.
+
+### Important things to know
+
+- **Not a security feature:** If you "Disallow" a route, humans can still type in the URL and see it. Bots can also choose to ignore it. User proper auth for true protection.
+
+- **Indexing vs Crawling:** Disallowing a page may stop it from being crawled, but it other sites link to it, search engines might still index the URL (but without details).
+
+- **Case sensitive:** contact ≠ Contact.
+
