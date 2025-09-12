@@ -129,3 +129,15 @@ It allows crawlers to see all you public facing pages but skips pages that has n
 
 - **Case sensitive:** contact ≠ Contact.
 
+## What is a Sitemap?
+
+A sitemap is an XML file that lists all the important pages of your website so that search engines (Google, Bing, etc.) can discover and index them more efficiently. 
+
+It's like a table of content for your site. 
+
+
+### Why it is important for SEO
+
+1. Helps crawlers discover content:
+
+- Especially useful for new websites or small sites (like your portfolio) where there aren’t many external links pointing to you yet.
