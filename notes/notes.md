@@ -141,3 +141,77 @@ It's like a table of content for your site.
 1. Helps crawlers discover content:
 
 - Especially useful for new websites or small sites (like your portfolio) where there aren’t many external links pointing to you yet.
+
+2. Controls Priority 
+
+- You can hint search engines to which pages matter most (priority values).
+
+3. Keeps things fresh
+
+- The lastmod field tells crawlers when a page was last updated, nudging them to re-crawl.
+
+4. Essential for structed sites
+
+- If you have multiple languages, media-heavy content, or subdomains, sitemaps help crawlers understand your structure.
+
+### How does it work?
+
+A typical sitemap.xml looks like this:
+
+```
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://example.com</loc>
+    <lastmod>2025-09-06T00:00:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://example.com/about-me</loc>
+    <lastmod>2025-09-06T00:00:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://example.com/contact-me</loc>
+    <lastmod>2025-09-06T00:00:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>
+```
+
+### Key Elements
+
+- <loc> -> URL of the page.
+
+- <lastmod> -> when the page was last updated.
+
+- <changefreq> -> how often it usually changes (daily, weekly, monthly).
+
+<priority> -> hint at importance (1.0 = highest).
+
+### How to Use It
+
+1. Place sitemap.xml in the root. Netlify does this automatically if you generate one.
+
+-> https://example.com/sitemap.xml
+
+2. Reference it in the robot.txt:
+
+```
+Sitemap: https://example.com/sitemap.xml
+```
+
+3. Submit it in Google Search Console -> this tells Google directly "here are my important pages." 
+
+- Only include important pages that you want visitors to see. Not pages with routes like '/email-sent'.
+
+### Common Mistakes:
+
+- Forgetting to update after new pages are added.
+
+- Blocking important pages in robots.txt (which overrides sitemap).
+
+- Having broken links inside of the sitemap.
+
