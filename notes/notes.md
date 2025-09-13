@@ -215,3 +215,60 @@ Sitemap: https://example.com/sitemap.xml
 
 - Having broken links inside of the sitemap.
 
+## What is Indexing?
+
+Indexing is when a search engine
+
+1. Finds your page (via sitemap, external links, or crawling).
+
+2. Processes the page (reads the HTML, metadata, schema, and content).
+
+3. Stores it in their database(the "Google Index").
+
+It is similar to a library"
+
+- Crawling = discovering new books.
+
+- Indexing = cataloging the books so they can be searched.
+
+- Ranking = deciding which books show up first when you search.
+
+### How Does Google Decide to Index:
+
+Google does not index everything. It looks at:
+
+- Relevance -> Does the page provide value? 
+(Home, About, Contact) -> yes
+(Email-Sent) -> no
+
+- Quality: -> Is the page accessible, fast, mobile-friendly?
+
+- Meta Tags: ->
+<meta name='robots'
+content='noindex'> -> tells google not to index.
+
+- Canonical tags -> avoid duplicate content.
+
+### Workflow for a website:
+
+1. **You publish a page** -> /about-me
+
+2. **Sitemap** tells google it exists.
+
+3. **Crawler vists** -> reads HTML, CSS, metadata, schema.
+
+4. **Indexing** -> stores content in Google's Index.
+
+5. **Ranking** -> when someone searches your name, google decides if / or /about-me shows up.
+
+### Why Pages Might Not Be Indexed
+
+- New sites can take days or weeks to be indexed
+
+- No backlinks (Googlebots discovers slower).
+
+- Crawl budget limits (less of an issue for smaller sites).
+
+- robots.txt or noindex blocking it. 
+
+- Thin or duplicate content (Google may skip).
