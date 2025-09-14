@@ -272,3 +272,9 @@ content='noindex'> -> tells google not to index.
 - robots.txt or noindex blocking it. 
 
 - Thin or duplicate content (Google may skip).
+
+## What is Google Site Verification?
+
+Google site verification is proving to google that you own your site.
+
+- Before Google lets you see private data in Search Console (like indexing status, impressions, clicks, errors), it wants to make sure you're the rightful owner.
