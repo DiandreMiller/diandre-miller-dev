@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import MyHobbies from '../components/MyHobbies';
 import MyProjects from "../components/MyProjects";
 
+// About page with metadata
 const About = () => {
   return (
     <>
