@@ -311,3 +311,17 @@ There are multiple methods (you only need one):
 4. Google Analytics/ Tag Manager
 
     - If you already use Google Analytics, you can verify via the tracking code.
+
+### Why Verficiation Matter
+
+- Lets you access Google Search Console full.
+
+- You can:
+
+    - Request indexing.
+    - See which queries bring users to your site.
+    - Monitor sitemap status.
+    - Track Mobile usability.
+    - Get alerts for crawel/indexing errors.
+
+Without verification, google still crawls and indexes your site, but you don't see the data. 
