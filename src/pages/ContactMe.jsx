@@ -6,6 +6,7 @@ import DOMPurify from "dompurify";
 const sanitizeText = (val) =>
   DOMPurify.sanitize(val, { ALLOWED_TAGS: [], ALLOWED_ATTR: [] }).trim();
 
+// Contact me page and metadata
 const ContactMe = () => {
   const navigate = useNavigate();
 
