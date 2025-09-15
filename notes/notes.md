@@ -12,6 +12,7 @@
 - **Crawlers**
 - **Spam Protection**
 - **Rich Test**
+- **TTFB**
 
 ## What is SEO?
 
@@ -325,3 +326,182 @@ There are multiple methods (you only need one):
     - Get alerts for crawel/indexing errors.
 
 Without verification, google still crawls and indexes your site, but you don't see the data. 
+
+## Open Graph (OG)
+
+**What is it:** metadata is used by Facebook, Linkedin, iMessage, and many others to build **rich link previews.** 
+
+Core tags
+```
+//html
+<meta property="og:title" content="Diandre Miller | Full Stack Software Engineer" />
+<meta property="og:description" content="Explore my portfolio — projects in React, Node.js, PostgreSQL and more." />
+<meta property="og:image" content="https://diandremillerdev.netlify.app/diandre-dev.png?v=3" />
+<meta property="og:url" content="https://diandremillerdev.netlify.app/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Diandre Miller Dev" />
+```
+
+**Nice to have for Apple/iMessage**
+
+```
+html
+<meta property="og:image:secure_url" content="https://diandremillerdev.netlify.app/diandre-dev.png?v=3" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+```
+
+Pro tips
+
+- Use 1200X620 images for big, crisp cards.
+
+- Bump query param (?v-4) to force caches to refresh.
+
+## Twitter Card
+
+**What it is:** Twitter's card system. Similar to OG but with its own tags.
+
+**Large summary card**
+
+```
+//html
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Diandre Miller | Full Stack Software Engineer" />
+<meta name="twitter:description" content="Explore projects and contact me." />
+<meta name="twitter:image" content="https://diandremillerdev.netlify.app/diandre-dev.png?v=3" />
+```
+
+**Debug**
+
+- Use Twitter Card Validator to re-scrape when you change images. 
+
+## Schema Markup (Structed Data)
+
+What it is: machine-readable JSON-LD in your HTML that tells Google what a page represents (Person, Webpage, ContactPage, etc.). Enables rich results and improved understanding. 
+
+**Where it goes:** inside <head> (or in React head for SPA pages).
+
+Example: Home (Webpage + Person reference)
+
+```
+//html
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebPage",
+  "@id":"https://diandremillerdev.netlify.app/#webpage",
+  "url":"https://diandremillerdev.netlify.app/",
+  "name":"Diandre Miller | Full Stack Software Engineer",
+  "description":"Portfolio of Diandre Miller...",
+  "author":{"@id":"https://diandremillerdev.netlify.app/#person"},
+  "publisher":{"@id":"https://diandremillerdev.netlify.app/#person"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "@id":"https://diandremillerdev.netlify.app/#person",
+  "name":"Diandre Miller",
+  "jobTitle":"Full Stack Software Engineer",
+  "url":"https://diandremillerdev.netlify.app/",
+  "sameAs":[
+    "https://github.com/DiandreMiller",
+    "https://www.linkedin.com/in/diandre-miller/"
+  ]
+}
+</script>
+```
+
+## Page Schemas (by route)
+
+- **Home:** WebPage + Person (as above).
+
+- **About:** AboutPage + reference the same Person @id.
+
+```
+//html
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"AboutPage",
+  "name":"About | Diandre Miller",
+  "url":"https://diandremillerdev.netlify.app/about-me",
+  "mainEntity":{"@id":"https://diandremillerdev.netlify.app/#person"}
+}
+</script>
+```
+
+**Contact:** ContactPage + ContactPoint.
+
+```
+html
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ContactPage",
+  "name":"Contact | Diandre Miller Dev",
+  "url":"https://diandremillerdev.netlify.app/contact-me",
+  "about":{"@id":"https://diandremillerdev.netlify.app/#person"},
+  "contactPoint":[{
+    "@type":"ContactPoint",
+    "contactType":"inquiries",
+    "email":"millerdiandre@gmail.com",
+    "telephone":"+1-973-780-4709",
+    "areaServed":"US",
+    "availableLanguage":["English"]
+  }]
+}
+</script>
+```
+
+**Why per-page schemas help**
+
+- Clarifies intent (about vs contact) -> better eligibilty for rich feautres (breadcrumbs, knowledge panels, sitelinks).
+
+## Crawlers
+
+**What they do:** automated agents (Googlebot, Bingbot, DuckDuckBot) that request your pages, follow links execute some JS, and send a distilled representation to the index.
+
+**How to be crawler-friendly**
+
+- Fast TTFB, compressed assets, HTTP/2.
+
+- Mobile-first layout + responsive design.
+
+- Don't block essential JS/CSS in robots.txt.
+
+- Avoid initite scroll without links (include cralable links to important sections).
+
+- Use internal links (Home -> About, Contact, Projects).
+
+## Spam Protection (forms + SEO hygiene)
+
+**Your contact form**
+
+- Honeypot field.
+
+- Time-to-submit delay.
+
+- Optional: reCAPTCHA or hCaptcha if spam persists.
+
+- Sanitize inputs (DomPurify)
+
+**Site-wide**
+
+- Keep dependencies up to date. Secure headers (Netlify_headers) to protect pages and assets.
+
+= Rate limit if you expose APIs.
+
+## Rich Test (Rich Results Test)
+
+**What is it:** Google's validator that checks your **schema markup** and tells you if your page is elibigble for rich results.
+
+**How to use:**
+
+- Test the public URL (ideal) to paste the valid JSON-LD
+
+- Fix any errrs/warnings (missing @id, invalid types, etc.).
+
+
