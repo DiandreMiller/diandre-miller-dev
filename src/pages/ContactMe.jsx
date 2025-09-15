@@ -3,7 +3,6 @@ import { Mail, Phone, Github, Linkedin } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import DOMPurify from "dompurify";
 
-// Todo list: Get started on anti-spam delay submission
 const sanitizeText = (val) =>
   DOMPurify.sanitize(val, { ALLOWED_TAGS: [], ALLOWED_ATTR: [] }).trim();
 
