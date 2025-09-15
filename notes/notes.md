@@ -13,6 +13,7 @@
 - **Spam Protection**
 - **Rich Test**
 - **TTFB**
+- **JSON-LD**
 
 ## What is SEO?
 
