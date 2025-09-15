@@ -280,3 +280,34 @@ Google site verification is proving to google that you own your site.
 - Before Google lets you see private data in Search Console (like indexing status, impressions, clicks, errors), it wants to make sure you're the rightful owner.
 
 - Think of it like showing an ID at a door before you're allowed into your own SERO "control room."
+
+### How Google Lets You Verify
+
+There are multiple methods (you only need one):
+
+1. HTML File Upload (common for Netlify, Vercel, custom servers)
+
+    - Google give you a tiny file -> google12345abc.html
+
+    - You drop it in your site's public root folder.
+
+    - When Googlebots sees the file at example.com/google12345abc.html, ownership is verified.
+
+2. Meta Tag (easier with React apps)
+
+    - Google dives you something like this
+    ```
+    //html
+    <meta name="google-site-verification" content="your-code-here" />
+    ```
+    - You add it inside <head> of index.html.
+
+3. DNS TXT Record (best for domain-wide verification)
+
+    - Add a record like google-site-verification=your-code in your domain DNS (Namecheap, GoDaddy, Cloudflare, etc.).
+
+    - More permanent because it covers all subdomains.
+
+4. Google Analytics/ Tag Manager
+
+    - If you already use Google Analytics, you can verify via the tracking code.
