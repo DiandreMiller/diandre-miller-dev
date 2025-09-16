@@ -505,4 +505,52 @@ html
 
 - Fix any errrs/warnings (missing @id, invalid types, etc.).
 
+## JSON-LD 
+
+JSON-LD (Javascript Object Notation for Linked Data) is a way to embed structed data inside your HTML pages so that search engines like Google, Bing, etc. can understand what your page is about, not just what it says.
+
+**Why It Exists**
+
+HTML tells browsers how to display a page, but not the deeper meaning of the content. For example:
+
+Humans understanf that "Diandre Miller" under a photo + "Full Stack Software Engineer" means that's a person with a job title.A crawler just sees texts.
+
+JSON-LD gives machines a clean, standardized data block that explicitly says:
+
+```
+//json
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Diandre Miller",
+  "jobTitle": "Full Stack Software Engineer",
+  "url": "https://diandremillerdev.netlify.app/",
+  "sameAs": [
+    "https://github.com/DiandreMiller",
+    "https://www.linkedin.com/in/diandre-miller/"
+  ]
+}
+```
+
+**How It Works**
+
+- You wrap that JSON in a <script type='application/ld+json'>
+
+- Browsers ignore it, but search engines read it.
+
+- It doesn't affect how your site looks, only how it is interpreted.
+
+```
+//html
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Diandre Miller",
+  "jobTitle": "Full Stack Software Engineer"
+}
+</script>
+```
+
+
 
