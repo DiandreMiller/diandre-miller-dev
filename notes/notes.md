@@ -552,5 +552,6 @@ JSON-LD gives machines a clean, standardized data block that explicitly says:
 </script>
 ```
 
+## TTFB
 
 
