@@ -552,6 +552,28 @@ JSON-LD gives machines a clean, standardized data block that explicitly says:
 </script>
 ```
 
+### Benefit
+
+- **Rich results:** better previews in search results (stars, breadcrumbs, profile info, etc.).
+
+- **Disambiguation:** Google knows "Diadnre Miller" is a person not, say a business or random string.
+
+- **Trust and Visibility:** can power knowledge panels, featured snippers, sitelinks, etc.
+
+### Why JSON-LD (and not Microdata or RDFa)?
+
+- Cleaner: you don't clutter HTML with itemprop attributes.
+
+- Easier to update: one block in the <head> instead of sprinkling tags everywhere.
+
+- Recommened by Google: they explicitly prefer JSON-LD for structed data.
+
+### Summary
+
+- JSON-LD = hidden machine-readble "resume" for each page, describing its content (Person, Webpage, ContactPage, etc.).
+
+- It is invisible to users but crucial for search engines to properly rank and enrich your site in results.
+
 ## TTFB
 
 
