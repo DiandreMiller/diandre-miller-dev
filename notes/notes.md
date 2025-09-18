@@ -574,6 +574,62 @@ JSON-LD gives machines a clean, standardized data block that explicitly says:
 
 - It is invisible to users but crucial for search engines to properly rank and enrich your site in results.
 
-## TTFB
+## What is TTFB?
 
+TTFB (Time To First Byte) measures how long it takes between:
+
+1. When a browser (or user's device) makes a request for a page.
+
+2. When the very first byte of data comes back from the server.
+
+So if you type in https://diandremillerdev.netlify.app/:
+
+- The request travels from your computer -> DNS -> hosting server.
+
+- The server processes it (maybe running code, hitting a database, etc.).
+
+- Then, it sends the very first piece of the page back. That delay is TTFB.
+
+### Why It Matters
+
+- SEO: Google uses page speed as a ranking factor. A slow TTFB can hurt rankings.
+
+- User experience: A user see "blank screen" until data starts streaming. The longer it takes, the worse it feels.
+
+- Debugging performance: High TTFB usually means server issues, not front-end issues.
+
+## Typical Targets
+
+- <200 ms -> Great.
+- 200-500 ms -> Okay.
+- >500 ms -> Might cause problems
+- > 1s -> Google considers this poor.
+
+### Common Causes of High TTFB
+
+- Slow or overloaded server.
+
+- Complex backend logic (too many database queries).
+
+- Poor CDN [Content Delivery Network](https://www.cloudflare.com/learning/cdn/what-is-a-cdn/) usage (no edge caching).
+
+- Cold starts (like serverles functions spinning up).
+
+- Bad [DNS](https://www.cloudflare.com/learning/dns/what-is-dns/) resolution times. 
+
+### How to Improve TTFB
+
+- Use a CDN (like Netlify)
+
+- Enable caching (static assess, prebuilt HTML).
+
+- Optimize server-side code (reduce DB calls, simplify logic).
+
+- Keep servers close to users (geo-distribution).
+
+- Make sure HTTPS/SSL is optimized (HTTP/2 or 3 helps).
+
+### Summary
+
+TTFB is how quickly your server "responds". It doesn't measure how fast the page loads after, just how fast the first byte of info comes back. For static-hosted sites, TTFB is usually excellent since files are cached on edge servers.
 
