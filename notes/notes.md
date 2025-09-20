@@ -1,6 +1,6 @@
 # Search Engine Optimization
 
-## ***Topics To Be Covered***
+## ***Topics To Be Covered:***
 
 - **What is SEO**
 - **Robots.txt**
