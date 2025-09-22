@@ -8,6 +8,9 @@ import FourOFour from './pages/FourOFour';
 import ContactMe from './pages/ContactMe';
 import Success from './pages/Success';
 
+// Component Test
+// import EnterTheMatrix from './components/EnterTheMatrix'
+
 // Layout
 import Layout from './components/Layout';
 
@@ -33,6 +36,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route element={<Home />} path='/' />
+        {/* <Route element={<EnterTheMatrix />} path='/enter-the-matrix' /> */}
         <Route element={<Layout />}>
           <Route element={<About />} path='/about-me' />
           <Route element={<ContactMe />} path='/contact-me' />
