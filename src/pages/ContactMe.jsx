@@ -3,6 +3,7 @@ import { Mail, Phone, Github, Linkedin } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import DOMPurify from "dompurify";
 
+// Sanitizing Inputs
 const sanitizeText = (val) =>
   DOMPurify.sanitize(val, { ALLOWED_TAGS: [], ALLOWED_ATTR: [] }).trim();
 
