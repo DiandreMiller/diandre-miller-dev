@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../components/matrixFourOFour.css";
 
+// Page not found -> 404 page
 const FourOFour = () => {
   const location = useLocation();
   const currentUrl =
