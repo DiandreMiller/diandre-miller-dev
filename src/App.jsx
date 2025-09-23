@@ -29,7 +29,7 @@ function AliasRouter() {
     redirectIf('email-sent', 'email-sent') ||
     <FourOFour />
   );
-}
+};
 
 function App() {
   return (
