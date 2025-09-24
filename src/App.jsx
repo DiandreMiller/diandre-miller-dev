@@ -36,6 +36,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route element={<Home />} path='/' />
+        {/* Test animation */}
         {/* <Route element={<EnterTheMatrix />} path='/enter-the-matrix' /> */}
         <Route element={<Layout />}>
           <Route element={<About />} path='/about-me' />
