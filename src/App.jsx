@@ -8,6 +8,9 @@ import FourOFour from './pages/FourOFour';
 import ContactMe from './pages/ContactMe';
 import Success from './pages/Success';
 
+//ToDo:
+// Continue enter the matrix
+
 // Component Test
 // import EnterTheMatrix from './components/EnterTheMatrix';
 
