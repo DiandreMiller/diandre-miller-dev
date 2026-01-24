@@ -1,5 +1,5 @@
 import dCreatorVerse from "../assets/DCreatorVerse.png";
-import interactiveResume from "../assets/interactiveResume.png";
+// import interactiveResume from "../assets/interactiveResume.png";
 import redCanarySecureLoginChallenge from "../assets/redCanarySecureLoginChallenge.jpeg";
 import smrtCart from "../assets/smrtCart.png";
 import threeMYoutube from "../assets/threeMYoutube.png";
