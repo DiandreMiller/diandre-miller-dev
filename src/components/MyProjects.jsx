@@ -4,7 +4,7 @@ import redCanarySecureLoginChallenge from "../assets/redCanarySecureLoginChallen
 import smrtCart from "../assets/smrtCart.png";
 import threeMYoutube from "../assets/threeMYoutube.png";
 import wealthWise from "../assets/wealthWise.png";
-import seasTheDaySeaside from '../assets/seasTheDaySeaside.png'
+import seasTheDaySeaside from '../assets/seasthedayseaside.png'
 
 //ToDo: Have Screenshots of the project flashing
 
