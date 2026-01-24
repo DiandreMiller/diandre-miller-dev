@@ -10,6 +10,7 @@ import Success from './pages/Success';
 
 //ToDo:
 // Continue enter the matrix
+// Add seasthedayseaside to projects
 
 // Component Test
 // import EnterTheMatrix from './components/EnterTheMatrix';
