@@ -4,6 +4,7 @@ import redCanarySecureLoginChallenge from "../assets/redCanarySecureLoginChallen
 import smrtCart from "../assets/smrtCart.png";
 import threeMYoutube from "../assets/threeMYoutube.png";
 import wealthWise from "../assets/wealthWise.png";
+import seasTheDaySeaside from '../assets/seasTheDaySeaside.png'
 
 //ToDo: Have Screenshots of the project flashing
 
@@ -16,11 +17,17 @@ const MyProjects = () => {
       desc: "A creative digital platform where you can explore your favorite creators.",
     },
     {
-      name: "Interactive Resume",
-      img: interactiveResume,
-      link: "https://diandremillerinteractiveresume.netlify.app/",
-      desc: "If you love basketball, resumes, and games, you'll love this app.",
+      name: "Seas The Day Seaside",
+      img: seasTheDaySeaside,
+      link: "https://seasthedayseaside.com/",
+      desc: "Beach rental equipment at the best price in town.",
     },
+    // {
+    //   name: "Interactive Resume",
+    //   img: interactiveResume,
+    //   link: "https://diandremillerinteractiveresume.netlify.app/",
+    //   desc: "If you love basketball, resumes, and games, you'll love this app.",
+    // },
     {
       name: "Red Canary Secure Login Challenge",
       img: redCanarySecureLoginChallenge,
