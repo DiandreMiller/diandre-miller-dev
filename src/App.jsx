@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import Fuse from 'fuse.js';
 import './App.css';
 
 // Pages
@@ -16,6 +17,7 @@ import Success from './pages/Success';
 
 // Layout
 import Layout from './components/Layout';
+// import { label } from 'framer-motion/client';
 
 // Catch-all near routes
 function AliasRouter() {
@@ -26,12 +28,42 @@ function AliasRouter() {
     return re.test(pathname) ? <Navigate to={`/${to}`} replace /> : null;
   };
 
-  return (
+  const hardRedirect = 
     redirectIf('about-me', 'about-me') ||
     redirectIf('contact-me', 'contact-me') ||
-    redirectIf('email-sent', 'email-sent') ||
-    <FourOFour />
-  );
+    redirectIf('email-sent', 'email-sent');
+
+    if(hardRedirect) {
+      return hardRedirect;
+    }
+
+    if (/^\/product[a-z0-9-]*$/i.test(pathname)) {
+      return <Navigate to="/" replace />;
+    };
+
+  const routeChoices = [
+    {path: '/about-me', label: 'About Me'},
+    {path: '/contact-me' , label: 'Contact Me' },
+    {path: '/email-sent', label: 'Email Sent' },
+  ]
+
+  const fuse = new Fuse(routeChoices, {
+    keys: ['path', 'label'],
+    threshold: 0.35,
+    ignoreLocation: true,
+    includeScore: true,
+  });
+
+  const query = pathname.toLowerCase();
+  const result = fuse.search(query)[0]; // best match
+
+  console.log('result:', result);
+
+  if(result && result.score != null && result.score < 0.20) {
+    return <Navigate to={result.item.path} replace />;
+  }
+
+  return <FourOFour />
 };
 
 function App() {
