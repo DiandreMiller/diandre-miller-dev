@@ -1,4 +1,5 @@
-import dCreatorVerse from "../assets/DCreatorVerse.png";
+// import dCreatorVerse from "../assets/DCreatorVerse.png";
+import DeborahsWisdom from '../assets/DeborahsWisdom.png';
 // import interactiveResume from "../assets/interactiveResume.png";
 import redCanarySecureLoginChallenge from "../assets/redCanarySecureLoginChallenge.jpeg";
 import smrtCart from "../assets/smrtCart.png";
@@ -11,10 +12,10 @@ import seasTheDaySeaside from '../assets/seasthedayseaside.png'
 const MyProjects = () => {
   const projects = [
     {
-      name: "D-CreatorVerse",
-      img: dCreatorVerse,
-      link: "https://dcreatorverse.netlify.app/",
-      desc: "A creative digital platform where you can explore your favorite creators.",
+      name: "Deborahs Wisdom",
+      img: DeborahsWisdom,
+      link: "https://deborahswisdom.netlify.app/",
+      desc: "A peaceful Bible word game made with love, where you guess hidden words, grow your streak, and receive a verse to start your day with faith and encouragement.",
     },
     {
       name: "Seas The Day Seaside",
