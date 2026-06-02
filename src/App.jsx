@@ -11,7 +11,7 @@ import Success from './pages/Success';
 
 //ToDo:
 // Continue enter the matrix
-// Fix basketball page
+// Fix basketball page...
 
 // Component Test
 // import EnterTheMatrix from './components/EnterTheMatrix';
